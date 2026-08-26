@@ -1,0 +1,8 @@
+{
+  "name": "ff-tournament-registration",
+  "version": "1.0.0",
+  "description": "Free Fire tournament registration website with admin panel",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2" }
+}

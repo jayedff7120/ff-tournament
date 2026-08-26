@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel - FF Tournament</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+<main class="container admin-container">
+  <div id="loginBox" class="card narrow">
+    <h1>🔐 Admin Panel</h1>
+    <p class="muted">Enter your admin password.</p>
+    <input id="password" type="password" placeholder="Admin password">
+    <button class="btn" onclick="login()">Login</button>
+    <div id="loginMsg"></div>
+    <a class="back" href="/">← Back to tournament</a>
+  </div>
+
+  <div id="dashboard" style="display:none">
+    <div class="admin-title">
+      <div><span class="badge">ADMIN</span><h1>⚙️ Tournament Dashboard</h1></div>
+      <div><button class="btn small" onclick="logout()">Logout</button></div>
+    </div>
+
+    <section class="card">
+      <h2>🎯 Tournament Settings</h2>
+      <div class="settings-grid">
+        <div><label>Tournament Name</label><input id="sName"></div>
+        <div><label>Match Date</label><input id="sDate" type="date"></div>
+        <div><label>Match Time</label><input id="sTime" placeholder="08:00 PM"></div>
+        <div><label>Prize Pool</label><input id="sPrize" placeholder="৳10,000"></div>
+        <div class="full"><label>Banner Text</label><input id="sBanner"></div>
+        <div class="full"><label>Tournament Rules</label><textarea id="sRules" rows="5"></textarea></div>
+      </div>
+      <button class="btn" onclick="saveSettings()">💾 Save Settings</button>
+      <span id="saveMsg"></span>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <div><h2>📋 All Registrations</h2><p class="muted">Manage every registered team.</p></div>
+        <button class="btn small" onclick="downloadCSV()">📥 Download CSV</button>
+      </div>
+      <div id="adminTeams"></div>
+    </section>
+  </div>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>
