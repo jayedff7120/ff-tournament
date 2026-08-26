@@ -11,8 +11,7 @@ const DATA_FILE = path.join(DATA_DIR, "database.json");
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "NSCJ@yed";
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
-
+app.use(express.static(__dirname));
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 if (!fs.existsSync(DATA_FILE)) {
   fs.writeFileSync(DATA_FILE, JSON.stringify({
